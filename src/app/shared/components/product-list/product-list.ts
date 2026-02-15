@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, inject} from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Products } from '../../services/products';
 
@@ -13,6 +13,6 @@ export class ProductList {
 
   productService = inject(Products)
 
-  list = this.productService.productlist;
+  list = signal(this.productService.productlist);
 
 }
